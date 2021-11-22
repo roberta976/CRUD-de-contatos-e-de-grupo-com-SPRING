@@ -1,0 +1,2 @@
+# CRUD-de-contatos-e-de-grupo-com-SPRING
+Um crud simples com informações salvas em memória com o banco H2. O usuário pode adicionar, editar, remover e listar seus contatos. Além disso, o usuário também tem controle sobre a criação dos grupos de seus contatos. Então se tem um CRUD de Grupo com as informações de nome do grupo, visibilidade (público / privado) e data de expiração. No inclusão ou alteração de um Contato, são apresentados como opção de escolha apenas os grupos vigentes. 
