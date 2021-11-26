@@ -26,9 +26,16 @@ public class Contato {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dataNascimento;
 	private String estado;
+	private String cidade;
 	
 	
 	
+	public String getCidade() {
+		return cidade;
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
 	public String getNome() {
 		return nome;
 	}
