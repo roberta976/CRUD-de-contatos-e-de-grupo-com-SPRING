@@ -26,7 +26,7 @@ public class ContatoController {
 
 	@GetMapping("/exibirContato")
 	public String exibirForm(Contato contato, Grupo grupo, Model model) {
-		List<Grupo> listaDeGrupos = grupoService.getGruposdeVisibilityPublic();
+		List<Grupo> listaDeGrupos = grupoService.getGruposVigentes() ;
 		model.addAttribute("lista", listaDeGrupos);
 		return "contatos-form";
 		
@@ -54,9 +54,10 @@ public class ContatoController {
 	}
 	
 	@GetMapping("/editarContato")
-	public String editarContato(Long id, Model model) {
+	public String editarContato(Long id, Model model, Grupo grupo) {
 		
 		Contato contatoAtualizado = contatoService.acharContatoPorId(id);
+		List<Grupo> listaDeGrupos = grupoService.getGruposVigentes() ;
 //		Contato contatoParaEditar = null;
 //		for(Contato cont : this.contatos) {
 //			if(cont.getEmail().equals(email)) {
@@ -65,6 +66,7 @@ public class ContatoController {
 //		}
 		contatoService.atualizarContato(id);
 		model.addAttribute("contato", contatoAtualizado);
+		model.addAttribute("lista", listaDeGrupos);
 		return "contatos-form";
 	}
 }
