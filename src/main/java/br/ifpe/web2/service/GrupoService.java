@@ -26,10 +26,9 @@ public class GrupoService {
 //				return null;
 
 			
-			
 		}
-		public List<Grupo> getGruposDataVigente() {
-			return grupoDao.findGrupoByDataExpiracaoAfterOrDataExpiracaoIsNull(new Date());
+		public List<Grupo> getGruposVigentes() {
+			return grupoDAO.findGrupoByDataExpiracaoAfterOrDataExpiracaoIsNull(new Date());
 	    	}
 		public ArrayList<Grupo> listarTodosGrupos(){
 			return (ArrayList<Grupo>) grupoDAO.findAll();
