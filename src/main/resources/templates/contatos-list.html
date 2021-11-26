@@ -17,7 +17,7 @@
     <li><a href="/exibirContato">Cadastrar Contatos</a></li>
     <li><a href="/listarContatos">Listar Contatos</a></li>
     <li><a href="/exibirGrupo">Cadastrar Grupos</a></li>
-        <li><a href="/listarContatos">Listar Grupos</a></li>
+        <li><a href="/listarGrupos">Listar Grupos</a></li>
 		</ul>
 	</nav>
 	<div class="contatiner col-sm-8 col-md-12 col-md-offset-2">
@@ -26,12 +26,15 @@
 				<th>Nome</th>
 				<th>Telefone</th>
 				<th>E-mail</th>
+				<th>Cidade</th>
 				<th>Acões</th>
+				
 			</tr>
 			<tr th:each="cont : ${listaContatos}">
 				<td th:text="${cont.nome}"></td>
 				<td th:text="${cont.telefone}"></td>
-				<td th:text="${cont.email}"> 
+				<td th:text="${cont.email}"> </td>
+				<td th:text="${cont.cidade}"></td>
 				<td><a th:href="@{/editarContato(id=${cont.id})}">Editar</a>&nbsp;&nbsp;
 					<a th:href="@{/removerContato(id=${cont.id})}">Remover</a></td>
 					<!-- http://localhost:8080/removerContato?email=gloria.maria@gmail.com -->
