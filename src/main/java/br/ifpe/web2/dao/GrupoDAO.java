@@ -11,4 +11,5 @@ import br.ifpe.web2.model.Grupo;
 public interface GrupoDAO extends JpaRepository<Grupo, Long>{
 //	public List<Grupo> findGrupoByVisibilityPublic(Grupo grupo);
 	List<Grupo> findByVisibilidade(String visibilidade);
+	List<Grupo> findGrupoByDataExpiracaoAfterOrDataExpiracaoIsNull(Date date);
 }
