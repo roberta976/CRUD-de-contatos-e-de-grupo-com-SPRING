@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import br.ifpe.web2.dao.GrupoDAO;
 import br.ifpe.web2.model.Contato;
 import br.ifpe.web2.model.Grupo;
+import java.util.Date;
 
 @Service
 public class GrupoService {
@@ -18,15 +19,18 @@ public class GrupoService {
 	//Listar todos os Grupos
 		public List<Grupo> getGruposdeVisibilityPublic(){
 			
-				return grupoDAO.findByVisibilidade("publico");
+			return grupoDAO.findByVisibilidade("publico");
 //				if (grupo.getVisibilidade() == "publico") {
 //					return grupoDAO.findGrupoByVisibilityPublic(grupo);
 //				}
 //				return null;
-	
+
 			
 			
 		}
+		public List<Grupo> getGruposDataVigente() {
+			return grupoDao.findGrupoByDataExpiracaoAfterOrDataExpiracaoIsNull(new Date());
+	    	}
 		public ArrayList<Grupo> listarTodosGrupos(){
 			return (ArrayList<Grupo>) grupoDAO.findAll();
 		}
@@ -58,4 +62,5 @@ public class GrupoService {
 			return grupo;
 			
 		}
+	
 }
