@@ -1,5 +1,6 @@
 package br.ifpe.web2.dao;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
